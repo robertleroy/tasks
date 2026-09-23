@@ -8,7 +8,7 @@
 
 <br>
 
-## Init
+### Init:
 ```sh
 # push to main branch
 git init
@@ -21,7 +21,11 @@ git push -u origin main
    
 <br>
 
-## Deploy
+---
+
+
+### Deploy:
+
 1. Commit to github
 ```bash
 git add .
@@ -37,7 +41,7 @@ tasks/
 ```
 3. Clone repo to `tasks/app/`
 ```bash
-git clone https://github.com/your-username/tasks.git app
+git clone https://github.com/robertleroy/tasks.git app
 ```
 4. docker-compose.yml
 ```yaml
@@ -54,4 +58,20 @@ services:
     restart: unless-stopped
 ```
 5. `docker compose up -d`
+
+   
+<br>
+
+---
+
+### Update:
+
+1. edit, add, commit, push to github
+```bash
+git add . && git commit -m "update" && git push
+```
+2. Pull the repo into the `task/app/` folder: `git pull`
+3. Re-build from the `tasks` folder
+`docker compose up -d --build`
+
 

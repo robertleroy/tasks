@@ -2,7 +2,6 @@
   import { onMount, tick } from "svelte";
   import { dev } from "$app/environment";
   import { config, titlecase, store, swipe } from "$lib";
-  import favicon from "$lib/assets/favicon.svg";
   import dev_icon from "$lib/assets/dev.svg";
   import Icon from "$lib/components/Icon.svelte";
   import MenuToggle from "$lib/components/MenuToggle.svelte";
@@ -70,8 +69,12 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" href={dev ? favicon : favicon} />
+  <title>{config.appname}{dev ? " : dev" : ""}</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/icon-192.png" type="image/png">
+  <link rel="manifest" href="/manifest.json">
 </svelte:head>
+
 
 <div class="app" bind:clientWidth={appWidth}>
   <header>
