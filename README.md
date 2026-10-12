@@ -54,10 +54,12 @@ services:
       - ./data:/app/data
     environment:
       - DATABASE_URL=file:/app/data/local.db
-      - ORIGIN=http://100.73.161.19:3002
+      - ORIGIN=https://clio.tailef5bcf.ts.net
     restart: unless-stopped
 ```
 5. `docker compose up -d`
+6. `tailscale serve --bg 3002`
+7. serves to 443: `https://clio.tailef5bcf.ts.net/`
 
    
 <br>
@@ -72,6 +74,8 @@ git add . && git commit -m "update" && git push
 ```
 2. Pull the repo into the `task/app/` folder: `git pull`
 3. Re-build from the `tasks` folder
-`docker compose up -d --build`
+```
+docker compose up -d --build
+```
 
 

@@ -9,6 +9,7 @@
   import ListSidebar from "$lib/components/ListSidebar.svelte";
   import "./app.css";
 
+  const appname = "Tasks";
   let { data, children } = $props();
   let appWidth = $state(0);
   let showSidebar = $state(true);
@@ -69,7 +70,7 @@
 </script>
 
 <svelte:head>
-  <title>{config.appname}{dev ? " : dev" : ""}</title>
+  <title>{appname}{dev ? " : dev" : ""}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/icon-192.png" type="image/png">
   <link rel="manifest" href="/manifest.json">
@@ -91,7 +92,7 @@
             }}>
               <!-- <span>{@render Checklist()}</span> -->
               <span class="title">
-                {config.appname}
+                {appname}
               </span>
             </a>
           </div>
@@ -191,21 +192,6 @@
             {:else}
               <div class="placeholder">no list created..</div>
             {/if}
-            
-            <!-- {#each config.routes as route}
-              <div class="route">
-                <a href={route.path}
-                  onclick={() => {
-                    if (appWidth < 600) {
-                      showSidebar = false;
-                    }
-                }}>{route.name}</a>
-              </div>
-            {/each} -->
-
-            <!-- {#each {length: 50} as item, i}
-              <div class="route">Item {i}</div>
-            {/each} -->
           </nav>
 
           <a href="/#newListName" class="addList unset"
