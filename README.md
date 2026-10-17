@@ -72,7 +72,10 @@ services:
 ```bash
 git add . && git commit -m "update" && git push
 ```
-2. Pull the repo into the `task/app/` folder: `git pull`
+2. Pull the repo into the `task/app/` folder: 
+```
+git pull
+```
 3. Re-build from the `tasks` folder
 ```
 docker compose up -d --build
